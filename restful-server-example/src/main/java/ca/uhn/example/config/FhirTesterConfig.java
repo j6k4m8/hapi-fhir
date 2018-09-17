@@ -48,7 +48,7 @@ public class FhirTesterConfig {
 				.withId("hapi")
 				.withFhirVersion(FhirVersionEnum.DSTU2)
 				.withBaseUrl("http://fhirtest.uhn.ca/baseDstu2")
-				.withName("Public HAPI Test Server");
+				.withName("Public HAPI Test Server")
 			.addServer()
 				.withId("clinicalprofiles")
 				.withFhirVersion(FhirVersionEnum.DSTU2)
