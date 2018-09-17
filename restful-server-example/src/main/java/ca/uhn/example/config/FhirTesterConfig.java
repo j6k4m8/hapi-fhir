@@ -49,6 +49,11 @@ public class FhirTesterConfig {
 				.withFhirVersion(FhirVersionEnum.DSTU2)
 				.withBaseUrl("http://fhirtest.uhn.ca/baseDstu2")
 				.withName("Public HAPI Test Server");
+			.addServer()
+				.withId("clinicalprofiles")
+				.withFhirVersion(FhirVersionEnum.DSTU2)
+				.withBaseUrl("http:/52.201.117.121")
+				.withName("Clinical Profiles Server");
 		
 		/*
 		 * Use the method below to supply a client "factory" which can be used 
