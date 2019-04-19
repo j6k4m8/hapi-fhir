@@ -2399,7 +2399,7 @@ public class Enumerations {
         /**
          * A record of information transmitted from a sender to a receiver.
          */
-        COMMUNICATION, 
+        COMMUNICATION,
         /**
          * A set of resources composed into a single coherent clinical statement with clinical attestation.
          */
@@ -3321,7 +3321,11 @@ into another (possibly the same) biological entity.
         /**
          * A record of a clinical assessment performed to determine what problem(s) may affect the patient and before planning the treatments or management strategies that are best to manage a patient's condition. Assessments are often 1:1 with a clinical consultation / encounter,  but this varies greatly depending on the clinical workflow. This resource is called "ClinicalImpression" rather than "ClinicalAssessment" to avoid confusion with the recording of assessment tools such as Apgar score.
          */
-        CLINICALIMPRESSION, 
+        CLINICALIMPRESSION,
+        /**
+         * Clinical Profiles summarize and demonstrate the features of a population.
+         */
+        CLINICALPROFILE,
         /**
          * The CodeSystem resource is used to declare the existence of and describe a code system or code system supplement and its key properties, and optionally define a part or all of its content.
          */
@@ -4015,6 +4019,8 @@ The primary difference between a medication statement and a medication administr
           return CLAIMRESPONSE;
         if ("ClinicalImpression".equals(codeString))
           return CLINICALIMPRESSION;
+        if ("ClinicalProfile".equals(codeString))
+          return CLINICALPROFILE;
         if ("CodeSystem".equals(codeString))
           return CODESYSTEM;
         if ("Communication".equals(codeString))
@@ -4361,6 +4367,7 @@ The primary difference between a medication statement and a medication administr
             case CLAIM: return "Claim";
             case CLAIMRESPONSE: return "ClaimResponse";
             case CLINICALIMPRESSION: return "ClinicalImpression";
+            case CLINICALPROFILE: return "ClinicalProfile";
             case CODESYSTEM: return "CodeSystem";
             case COMMUNICATION: return "Communication";
             case COMMUNICATIONREQUEST: return "CommunicationRequest";
@@ -4579,6 +4586,7 @@ The primary difference between a medication statement and a medication administr
             case CLAIM: return "http://hl7.org/fhir/resource-types";
             case CLAIMRESPONSE: return "http://hl7.org/fhir/resource-types";
             case CLINICALIMPRESSION: return "http://hl7.org/fhir/resource-types";
+            case CLINICALPROFILE: return "http://hl7.org/fhir/resource-types";
             case CODESYSTEM: return "http://hl7.org/fhir/resource-types";
             case COMMUNICATION: return "http://hl7.org/fhir/resource-types";
             case COMMUNICATIONREQUEST: return "http://hl7.org/fhir/resource-types";
@@ -4797,6 +4805,7 @@ The primary difference between a medication statement and a medication administr
             case CLAIM: return "A provider issued list of professional services and products which have been provided, or are to be provided, to a patient which is sent to an insurer for reimbursement.";
             case CLAIMRESPONSE: return "This resource provides the adjudication details from the processing of a Claim resource.";
             case CLINICALIMPRESSION: return "A record of a clinical assessment performed to determine what problem(s) may affect the patient and before planning the treatments or management strategies that are best to manage a patient's condition. Assessments are often 1:1 with a clinical consultation / encounter,  but this varies greatly depending on the clinical workflow. This resource is called \"ClinicalImpression\" rather than \"ClinicalAssessment\" to avoid confusion with the recording of assessment tools such as Apgar score.";
+            case CLINICALPROFILE: return "Clinical Profiles summarize and demonstrate the features of a population.";
             case CODESYSTEM: return "The CodeSystem resource is used to declare the existence of and describe a code system or code system supplement and its key properties, and optionally define a part or all of its content.";
             case COMMUNICATION: return "An occurrence of information being transmitted; e.g. an alert that was sent to a responsible provider, a public health agency that was notified about a reportable condition.";
             case COMMUNICATIONREQUEST: return "A request to convey information; e.g. the CDS system proposes that an alert be sent to a responsible provider, the CDS system proposes that the public health agency be notified about a reportable condition.";
@@ -5015,6 +5024,7 @@ The primary difference between a medication statement and a medication administr
             case CLAIM: return "Claim";
             case CLAIMRESPONSE: return "ClaimResponse";
             case CLINICALIMPRESSION: return "ClinicalImpression";
+            case CLINICALPROFILE: return "ClinicalProfile";
             case CODESYSTEM: return "CodeSystem";
             case COMMUNICATION: return "Communication";
             case COMMUNICATIONREQUEST: return "CommunicationRequest";
@@ -5322,6 +5332,8 @@ The primary difference between a medication statement and a medication administr
           return FHIRAllTypes.CLAIMRESPONSE;
         if ("ClinicalImpression".equals(codeString))
           return FHIRAllTypes.CLINICALIMPRESSION;
+        if ("ClinicalProfile".equals(codeString))
+          return FHIRAllTypes.CLINICALPROFILE;
         if ("CodeSystem".equals(codeString))
           return FHIRAllTypes.CODESYSTEM;
         if ("Communication".equals(codeString))
@@ -5758,6 +5770,8 @@ The primary difference between a medication statement and a medication administr
           return new Enumeration<FHIRAllTypes>(this, FHIRAllTypes.CLAIMRESPONSE);
         if ("ClinicalImpression".equals(codeString))
           return new Enumeration<FHIRAllTypes>(this, FHIRAllTypes.CLINICALIMPRESSION);
+        if("ClinicalProfile".equals(codeString))
+          return new Enumeration<FHIRAllTypes>( this, FHIRAllTypes.CLINICALPROFILE);
         if ("CodeSystem".equals(codeString))
           return new Enumeration<FHIRAllTypes>(this, FHIRAllTypes.CODESYSTEM);
         if ("Communication".equals(codeString))
@@ -6187,6 +6201,8 @@ The primary difference between a medication statement and a medication administr
         return "ClaimResponse";
       if (code == FHIRAllTypes.CLINICALIMPRESSION)
         return "ClinicalImpression";
+      if (code == FHIRAllTypes.CLINICALPROFILE)
+        return "ClinicalProfile";
       if (code == FHIRAllTypes.CODESYSTEM)
         return "CodeSystem";
       if (code == FHIRAllTypes.COMMUNICATION)
@@ -6789,7 +6805,11 @@ into another (possibly the same) biological entity.
         /**
          * A record of a clinical assessment performed to determine what problem(s) may affect the patient and before planning the treatments or management strategies that are best to manage a patient's condition. Assessments are often 1:1 with a clinical consultation / encounter,  but this varies greatly depending on the clinical workflow. This resource is called "ClinicalImpression" rather than "ClinicalAssessment" to avoid confusion with the recording of assessment tools such as Apgar score.
          */
-        CLINICALIMPRESSION, 
+        CLINICALIMPRESSION,
+        /**
+         * Clinical Profiles summarize and demonstrate the features of a population.
+         */
+        CLINICALPROFILE,
         /**
          * The CodeSystem resource is used to declare the existence of and describe a code system or code system supplement and its key properties, and optionally define a part or all of its content.
          */
@@ -7475,6 +7495,8 @@ The primary difference between a medication statement and a medication administr
           return CLAIMRESPONSE;
         if ("ClinicalImpression".equals(codeString))
           return CLINICALIMPRESSION;
+        if ("ClinicalProfile".equals(codeString))
+          return CLINICALPROFILE;
         if ("CodeSystem".equals(codeString))
           return CODESYSTEM;
         if ("Communication".equals(codeString))
@@ -7817,6 +7839,7 @@ The primary difference between a medication statement and a medication administr
             case CLAIM: return "Claim";
             case CLAIMRESPONSE: return "ClaimResponse";
             case CLINICALIMPRESSION: return "ClinicalImpression";
+            case CLINICALPROFILE: return "ClinicalProfile";
             case CODESYSTEM: return "CodeSystem";
             case COMMUNICATION: return "Communication";
             case COMMUNICATIONREQUEST: return "CommunicationRequest";
@@ -8033,6 +8056,7 @@ The primary difference between a medication statement and a medication administr
             case CLAIM: return "http://hl7.org/fhir/resource-types";
             case CLAIMRESPONSE: return "http://hl7.org/fhir/resource-types";
             case CLINICALIMPRESSION: return "http://hl7.org/fhir/resource-types";
+            case CLINICALPROFILE: return "http://hl7.org/fhir/resource-types";
             case CODESYSTEM: return "http://hl7.org/fhir/resource-types";
             case COMMUNICATION: return "http://hl7.org/fhir/resource-types";
             case COMMUNICATIONREQUEST: return "http://hl7.org/fhir/resource-types";
@@ -8249,6 +8273,7 @@ The primary difference between a medication statement and a medication administr
             case CLAIM: return "A provider issued list of professional services and products which have been provided, or are to be provided, to a patient which is sent to an insurer for reimbursement.";
             case CLAIMRESPONSE: return "This resource provides the adjudication details from the processing of a Claim resource.";
             case CLINICALIMPRESSION: return "A record of a clinical assessment performed to determine what problem(s) may affect the patient and before planning the treatments or management strategies that are best to manage a patient's condition. Assessments are often 1:1 with a clinical consultation / encounter,  but this varies greatly depending on the clinical workflow. This resource is called \"ClinicalImpression\" rather than \"ClinicalAssessment\" to avoid confusion with the recording of assessment tools such as Apgar score.";
+            case CLINICALPROFILE: return "Clinical Profiles summarize and demonstrate the features of a population.";
             case CODESYSTEM: return "The CodeSystem resource is used to declare the existence of and describe a code system or code system supplement and its key properties, and optionally define a part or all of its content.";
             case COMMUNICATION: return "An occurrence of information being transmitted; e.g. an alert that was sent to a responsible provider, a public health agency that was notified about a reportable condition.";
             case COMMUNICATIONREQUEST: return "A request to convey information; e.g. the CDS system proposes that an alert be sent to a responsible provider, the CDS system proposes that the public health agency be notified about a reportable condition.";
@@ -8465,6 +8490,7 @@ The primary difference between a medication statement and a medication administr
             case CLAIM: return "Claim";
             case CLAIMRESPONSE: return "ClaimResponse";
             case CLINICALIMPRESSION: return "ClinicalImpression";
+            case CLINICALPROFILE: return "ClinicalProfile";
             case CODESYSTEM: return "CodeSystem";
             case COMMUNICATION: return "Communication";
             case COMMUNICATIONREQUEST: return "CommunicationRequest";
@@ -8770,6 +8796,8 @@ The primary difference between a medication statement and a medication administr
           return FHIRDefinedType.CLAIMRESPONSE;
         if ("ClinicalImpression".equals(codeString))
           return FHIRDefinedType.CLINICALIMPRESSION;
+        if ("ClinicalProfile".equals(codeString))
+          return FHIRDefinedType.CLINICALPROFILE;
         if ("CodeSystem".equals(codeString))
           return FHIRDefinedType.CODESYSTEM;
         if ("Communication".equals(codeString))
@@ -9202,6 +9230,8 @@ The primary difference between a medication statement and a medication administr
           return new Enumeration<FHIRDefinedType>(this, FHIRDefinedType.CLAIMRESPONSE);
         if ("ClinicalImpression".equals(codeString))
           return new Enumeration<FHIRDefinedType>(this, FHIRDefinedType.CLINICALIMPRESSION);
+        if ("ClinicalProfile".equals(codeString))
+          return new Enumeration<FHIRDefinedType>(this, FHIRDefinedType.CLINICALPROFILE);
         if ("CodeSystem".equals(codeString))
           return new Enumeration<FHIRDefinedType>(this, FHIRDefinedType.CODESYSTEM);
         if ("Communication".equals(codeString))
@@ -9627,6 +9657,8 @@ The primary difference between a medication statement and a medication administr
         return "ClaimResponse";
       if (code == FHIRDefinedType.CLINICALIMPRESSION)
         return "ClinicalImpression";
+      if (code == FHIRDefinedType.CLINICALPROFILE)
+        return "ClinicalProfile";
       if (code == FHIRDefinedType.CODESYSTEM)
         return "CodeSystem";
       if (code == FHIRDefinedType.COMMUNICATION)
@@ -9972,7 +10004,11 @@ The primary difference between a medication statement and a medication administr
         /**
          * FHIR Release 4 (Normative + STU).
          */
-        _4_0_0, 
+        _4_0_0,
+        /**
+         * Current build after R4.
+         */
+        _4_1_0,
         /**
          * added to help the parsers
          */
@@ -10022,6 +10058,8 @@ The primary difference between a medication statement and a medication administr
           return _3_5_0;
         if ("4.0.0".equals(codeString))
           return _4_0_0;
+        if ("4.1.0".equals(codeString))
+          return _4_1_0;
         throw new FHIRException("Unknown FHIRVersion code '"+codeString+"'");
         }
         public String toCode() {
@@ -10047,6 +10085,7 @@ The primary difference between a medication statement and a medication administr
             case _3_3_0: return "3.3.0";
             case _3_5_0: return "3.5.0";
             case _4_0_0: return "4.0.0";
+            case _4_1_0: return "4.1.0";
             default: return "?";
           }
         }
@@ -10073,6 +10112,7 @@ The primary difference between a medication statement and a medication administr
             case _3_3_0: return "http://hl7.org/fhir/FHIR-version";
             case _3_5_0: return "http://hl7.org/fhir/FHIR-version";
             case _4_0_0: return "http://hl7.org/fhir/FHIR-version";
+            case _4_1_0: return "http://hl7.org/fhir/FHIR-version";
             default: return "?";
           }
         }
@@ -10099,6 +10139,7 @@ The primary difference between a medication statement and a medication administr
             case _3_3_0: return "R4 Ballot #1.";
             case _3_5_0: return "R4 Ballot #2.";
             case _4_0_0: return "FHIR Release 4 (Normative + STU).";
+            case _4_1_0: return "Current build after R4.";
             default: return "?";
           }
         }
@@ -10125,6 +10166,7 @@ The primary difference between a medication statement and a medication administr
             case _3_3_0: return "3.3.0";
             case _3_5_0: return "3.5.0";
             case _4_0_0: return "4.0.0";
+            case _4_1_0: return "4.1.0";
             default: return "?";
           }
         }
@@ -10177,6 +10219,8 @@ The primary difference between a medication statement and a medication administr
           return FHIRVersion._3_5_0;
         if ("4.0.0".equals(codeString))
           return FHIRVersion._4_0_0;
+        if ("4.1.0".equals(codeString))
+          return FHIRVersion._4_1_0;
         throw new IllegalArgumentException("Unknown FHIRVersion code '"+codeString+"'");
         }
         public Enumeration<FHIRVersion> fromType(Base code) throws FHIRException {
@@ -10229,6 +10273,8 @@ The primary difference between a medication statement and a medication administr
           return new Enumeration<FHIRVersion>(this, FHIRVersion._3_5_0);
         if ("4.0.0".equals(codeString))
           return new Enumeration<FHIRVersion>(this, FHIRVersion._4_0_0);
+        if ("4.1.0".equals(codeString))
+          return new Enumeration<FHIRVersion>(this, FHIRVersion._4_1_0);
         throw new FHIRException("Unknown FHIRVersion code '"+codeString+"'");
         }
     public String toCode(FHIRVersion code) {
@@ -10274,6 +10320,8 @@ The primary difference between a medication statement and a medication administr
         return "3.5.0";
       if (code == FHIRVersion._4_0_0)
         return "4.0.0";
+      if (code == FHIRVersion._4_1_0)
+        return "4.1.0";
       return "?";
       }
     public String toSystem(FHIRVersion code) {
@@ -11268,7 +11316,11 @@ into another (possibly the same) biological entity.
         /**
          * A record of a clinical assessment performed to determine what problem(s) may affect the patient and before planning the treatments or management strategies that are best to manage a patient's condition. Assessments are often 1:1 with a clinical consultation / encounter,  but this varies greatly depending on the clinical workflow. This resource is called "ClinicalImpression" rather than "ClinicalAssessment" to avoid confusion with the recording of assessment tools such as Apgar score.
          */
-        CLINICALIMPRESSION, 
+        CLINICALIMPRESSION,
+        /**
+         * Clinical Profiles summarize and de monstrate the features of a population.
+         */
+        CLINICALPROFILE,
         /**
          * The CodeSystem resource is used to declare the existence of and describe a code system or code system supplement and its key properties, and optionally define a part or all of its content.
          */
@@ -11828,6 +11880,8 @@ The primary difference between a medication statement and a medication administr
           return CLAIMRESPONSE;
         if ("ClinicalImpression".equals(codeString))
           return CLINICALIMPRESSION;
+        if ("ClincialProfile".equals(codeString))
+          return CLINICALPROFILE;
         if ("CodeSystem".equals(codeString))
           return CODESYSTEM;
         if ("Communication".equals(codeString))
@@ -12107,6 +12161,7 @@ The primary difference between a medication statement and a medication administr
             case CLAIM: return "Claim";
             case CLAIMRESPONSE: return "ClaimResponse";
             case CLINICALIMPRESSION: return "ClinicalImpression";
+            case CLINICALPROFILE: return "ClinicalProfile";
             case CODESYSTEM: return "CodeSystem";
             case COMMUNICATION: return "Communication";
             case COMMUNICATIONREQUEST: return "CommunicationRequest";
@@ -12260,6 +12315,7 @@ The primary difference between a medication statement and a medication administr
             case CLAIM: return "http://hl7.org/fhir/resource-types";
             case CLAIMRESPONSE: return "http://hl7.org/fhir/resource-types";
             case CLINICALIMPRESSION: return "http://hl7.org/fhir/resource-types";
+            case CLINICALPROFILE: return "http://hl7.org/fhir/resource-types";
             case CODESYSTEM: return "http://hl7.org/fhir/resource-types";
             case COMMUNICATION: return "http://hl7.org/fhir/resource-types";
             case COMMUNICATIONREQUEST: return "http://hl7.org/fhir/resource-types";
@@ -12413,6 +12469,7 @@ The primary difference between a medication statement and a medication administr
             case CLAIM: return "A provider issued list of professional services and products which have been provided, or are to be provided, to a patient which is sent to an insurer for reimbursement.";
             case CLAIMRESPONSE: return "This resource provides the adjudication details from the processing of a Claim resource.";
             case CLINICALIMPRESSION: return "A record of a clinical assessment performed to determine what problem(s) may affect the patient and before planning the treatments or management strategies that are best to manage a patient's condition. Assessments are often 1:1 with a clinical consultation / encounter,  but this varies greatly depending on the clinical workflow. This resource is called \"ClinicalImpression\" rather than \"ClinicalAssessment\" to avoid confusion with the recording of assessment tools such as Apgar score.";
+            case CLINICALPROFILE: return "Clinical Profiles summarize and demonstrate the features of a population.";
             case CODESYSTEM: return "The CodeSystem resource is used to declare the existence of and describe a code system or code system supplement and its key properties, and optionally define a part or all of its content.";
             case COMMUNICATION: return "An occurrence of information being transmitted; e.g. an alert that was sent to a responsible provider, a public health agency that was notified about a reportable condition.";
             case COMMUNICATIONREQUEST: return "A request to convey information; e.g. the CDS system proposes that an alert be sent to a responsible provider, the CDS system proposes that the public health agency be notified about a reportable condition.";
@@ -12566,6 +12623,7 @@ The primary difference between a medication statement and a medication administr
             case CLAIM: return "Claim";
             case CLAIMRESPONSE: return "ClaimResponse";
             case CLINICALIMPRESSION: return "ClinicalImpression";
+            case CLINICALPROFILE: return "ClinicalProfile";
             case CODESYSTEM: return "CodeSystem";
             case COMMUNICATION: return "Communication";
             case COMMUNICATIONREQUEST: return "CommunicationRequest";
@@ -12745,6 +12803,8 @@ The primary difference between a medication statement and a medication administr
           return ResourceType.CLAIMRESPONSE;
         if ("ClinicalImpression".equals(codeString))
           return ResourceType.CLINICALIMPRESSION;
+        if ("ClinicalProfile".equals(codeString))
+          return ResourceType.CLINICALPROFILE;
         if ("CodeSystem".equals(codeString))
           return ResourceType.CODESYSTEM;
         if ("Communication".equals(codeString))
@@ -13051,6 +13111,8 @@ The primary difference between a medication statement and a medication administr
           return new Enumeration<ResourceType>(this, ResourceType.CLAIMRESPONSE);
         if ("ClinicalImpression".equals(codeString))
           return new Enumeration<ResourceType>(this, ResourceType.CLINICALIMPRESSION);
+        if ("ClinicalProfile".equals(codeString))
+          return new Enumeration<ResourceType>(this, ResourceType.CLINICALPROFILE);
         if ("CodeSystem".equals(codeString))
           return new Enumeration<ResourceType>(this, ResourceType.CODESYSTEM);
         if ("Communication".equals(codeString))
@@ -13350,6 +13412,8 @@ The primary difference between a medication statement and a medication administr
         return "ClaimResponse";
       if (code == ResourceType.CLINICALIMPRESSION)
         return "ClinicalImpression";
+      if (code == ResourceType.CLINICALPROFILE)
+        return "ClinicalProfile";
       if (code == ResourceType.CODESYSTEM)
         return "CodeSystem";
       if (code == ResourceType.COMMUNICATION)

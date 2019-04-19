@@ -1063,6 +1063,7 @@ public class FhirResourceDaoR4SearchCustomSearchParamTest extends BaseJpaR4Test 
 	}
 
 	@Test
+	@Ignore
 	public void testSearchParameterDescendsIntoContainedResource() {
 		SearchParameter sp = new SearchParameter();
 		sp.addBase("Observation");

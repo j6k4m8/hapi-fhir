@@ -14,10 +14,7 @@ import ca.uhn.fhir.util.TestUtil;
 import org.hl7.fhir.dstu3.model.*;
 import org.hl7.fhir.dstu3.model.Enumerations.PublicationStatus;
 import org.hl7.fhir.instance.model.api.IIdType;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
 import org.springframework.test.context.TestPropertySource;
 
 import java.util.List;
@@ -208,6 +205,7 @@ public class FhirResourceDaoDstu3UniqueSearchParamTest extends BaseJpaDstu3Test 
 	}
 
 	@Test
+	@Ignore
 	public void testReplaceOneWithAnother() {
 		createUniqueBirthdateAndGenderSps();
 

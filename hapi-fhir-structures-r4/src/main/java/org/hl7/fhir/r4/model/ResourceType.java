@@ -26,6 +26,7 @@ public enum ResourceType {
     Claim,
     ClaimResponse,
     ClinicalImpression,
+    ClinicalProfile,
     CodeSystem,
     Communication,
     CommunicationRequest,
@@ -197,6 +198,8 @@ public enum ResourceType {
       return "claimresponse";
     case ClinicalImpression:
       return "clinicalimpression";
+    case ClinicalProfile:
+      return "clinicalprofile";
     case CodeSystem:
       return "codesystem";
     case Communication:
@@ -495,6 +498,8 @@ public enum ResourceType {
       return ClaimResponse;
     if ("ClinicalImpression".equals(code))
       return ClinicalImpression;
+    if ("ClinicalProfile".equals(code))
+      return ClinicalProfile;
     if ("CodeSystem".equals(code))
       return CodeSystem;
     if ("Communication".equals(code))

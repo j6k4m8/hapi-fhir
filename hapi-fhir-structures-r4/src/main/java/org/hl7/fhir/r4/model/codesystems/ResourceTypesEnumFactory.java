@@ -81,6 +81,8 @@ public class ResourceTypesEnumFactory implements EnumFactory<ResourceTypes> {
       return ResourceTypes.CLAIMRESPONSE;
     if ("ClinicalImpression".equals(codeString))
       return ResourceTypes.CLINICALIMPRESSION;
+    if ("ClinicalProfile".equals(codeString))
+      return ResourceTypes.CLINICALPROFILE;
     if ("CodeSystem".equals(codeString))
       return ResourceTypes.CODESYSTEM;
     if ("Communication".equals(codeString))
@@ -381,6 +383,8 @@ public class ResourceTypesEnumFactory implements EnumFactory<ResourceTypes> {
       return "ClaimResponse";
     if (code == ResourceTypes.CLINICALIMPRESSION)
       return "ClinicalImpression";
+    if (code == ResourceTypes.CLINICALPROFILE)
+      return "ClinicalProfile";
     if (code == ResourceTypes.CODESYSTEM)
       return "CodeSystem";
     if (code == ResourceTypes.COMMUNICATION)

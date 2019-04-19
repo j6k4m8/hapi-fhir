@@ -46,6 +46,8 @@ public class ResourceFactory extends Factory {
             return new CatalogEntry();
         if ("EventDefinition".equals(name))
             return new EventDefinition();
+        if ("ClinicalProfile".equals(name))
+          return new ClinicalProfile();
         if ("DocumentManifest".equals(name))
             return new DocumentManifest();
         if ("MessageDefinition".equals(name))
@@ -484,6 +486,7 @@ public class ResourceFactory extends Factory {
         case 65189916: return new Claim();
         case 1488475261: return new ClaimResponse();
         case -1268501092: return new ClinicalImpression();
+        case -872888586: return new ClinicalProfile();
         case 1076953756: return new CodeSystem();
         case -1153521791: return new CodeableConcept();
         case 2023747466: return new Coding();

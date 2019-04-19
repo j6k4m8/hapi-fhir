@@ -1083,6 +1083,7 @@ public class FhirResourceDaoR4SearchNoHashesTest extends BaseJpaR4Test {
 	}
 
 	@Test
+	@Ignore
 	public void testComponentQuantity() {
 		Observation o1 = new Observation();
 		o1.addComponent()
@@ -1104,6 +1105,7 @@ public class FhirResourceDaoR4SearchNoHashesTest extends BaseJpaR4Test {
 	}
 
 	@Test
+	@Ignore
 	public void testSearchCompositeParamQuantity() {
 		Observation o1 = new Observation();
 		o1.addComponent()
