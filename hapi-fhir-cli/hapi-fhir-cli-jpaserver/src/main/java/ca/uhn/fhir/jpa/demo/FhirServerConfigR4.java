@@ -2,6 +2,7 @@ package ca.uhn.fhir.jpa.demo;
 
 import ca.uhn.fhir.jpa.config.BaseJavaConfigR4;
 import ca.uhn.fhir.jpa.dao.DaoConfig;
+import ca.uhn.fhir.jpa.model.entity.ModelConfig;
 import ca.uhn.fhir.jpa.util.SubscriptionsRequireManualActivationInterceptorR4;
 import ca.uhn.fhir.rest.server.interceptor.IServerInterceptor;
 import ca.uhn.fhir.rest.server.interceptor.LoggingInterceptor;
@@ -50,6 +51,12 @@ public class FhirServerConfigR4 extends BaseJavaConfigR4 {
 		retVal.setSubscriptionPurgeInactiveAfterMillis(DateUtils.MILLIS_PER_HOUR);
 		retVal.setAllowMultipleDelete(true);
 		return retVal;
+	}
+
+
+	@Bean
+	public ModelConfig modelConfig() {
+		return daoConfig().getModelConfig();
 	}
 
 	@Override

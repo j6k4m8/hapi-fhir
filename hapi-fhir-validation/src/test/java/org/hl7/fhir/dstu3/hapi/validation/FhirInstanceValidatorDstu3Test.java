@@ -321,6 +321,7 @@ public class FhirInstanceValidatorDstu3Test {
 	}
 
 	@Test
+	@Ignore
 	public void testValidateQuestionnaire() throws IOException {
 		CodeSystem csYesNo = loadResource("/dstu3/fmc01-cs-yesnounk.json", CodeSystem.class);
 		myCodeSystems.put(csYesNo.getUrl(), csYesNo);

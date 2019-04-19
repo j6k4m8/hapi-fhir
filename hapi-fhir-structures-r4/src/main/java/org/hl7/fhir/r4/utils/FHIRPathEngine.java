@@ -1,15 +1,7 @@
 package org.hl7.fhir.r4.utils;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.EnumSet;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.TimeZone;
+import java.util.*;
 
 import ca.uhn.fhir.model.api.TemporalPrecisionEnum;
 import org.apache.commons.lang3.NotImplementedException;
@@ -1181,7 +1173,7 @@ public class FHIRPathEngine {
           work = work2;
         else if (last.getOperation() == Operation.Is || last.getOperation() == Operation.As) {
           work2 = executeTypeName(context, focus, next, false);
-          work = operate(work, last.getOperation(), work2);
+          work = operate_over(work, last.getOperation(), work2);
         } else {
           work2 = execute(context, focus, next, true);
           work = operate(work, last.getOperation(), work2);
@@ -1193,6 +1185,16 @@ public class FHIRPathEngine {
     }
 //    System.out.println("Result of {'"+exp.toString()+"'}: "+work.toString());
     return work;
+  }
+
+  private List<Base> operate_over(List<Base> left, Operation operation, List<Base> right) {
+    List<Base> result = new ArrayList<>();
+    for(Base l: left) {
+      for(Base r:  operate(new ArrayList<Base>(Arrays.asList(l)), operation, right)) {
+        result.add(r);
+      }
+    }
+    return result;
   }
 
   private List<Base> executeTypeName(ExecutionContext context, List<Base> focus, ExpressionNode next, boolean atEntry) {
@@ -3298,7 +3300,7 @@ public class FHIRPathEngine {
         if (s.startsWith("#")) {
           Property p = context.resource.getChildByName("contained");
           for (Base c : p.getValues()) {
-            if (s.substring(1).equals(c.getIdBase())) {
+            if (s.equals(c.getIdBase())) {
               res = c;
               break;
             }
