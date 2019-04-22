@@ -29,7 +29,7 @@ package org.hl7.fhir.r4.model;
   
 */
 
-// Generated on Thu, Dec 27, 2018 10:06-0500 for FHIR v4.0.0
+// Generated on Mon, Apr 22, 2019 09:16-0500 for FHIR v4.1.0
 
 import java.util.*;
 
@@ -216,7 +216,7 @@ public class Group extends DomainResource {
         /**
          * The value of the trait that holds (or does not hold - see 'exclude') for members of the group.
          */
-        @Child(name = "value", type = {CodeableConcept.class, BooleanType.class, Quantity.class, Range.class, Reference.class}, order=2, min=1, max=1, modifier=false, summary=false)
+        @Child(name = "value", type = {CodeableConcept.class, BooleanType.class, Quantity.class, Range.class, Group.class, ValueSet.class}, order=2, min=1, max=1, modifier=false, summary=false)
         @Description(shortDefinition="Value held by characteristic", formalDefinition="The value of the trait that holds (or does not hold - see 'exclude') for members of the group." )
         protected Type value;
 
@@ -445,7 +445,7 @@ public class Group extends DomainResource {
         protected void listChildren(List<Property> children) {
           super.listChildren(children);
           children.add(new Property("code", "CodeableConcept", "A code that identifies the kind of trait being asserted.", 0, 1, code));
-          children.add(new Property("value[x]", "CodeableConcept|boolean|Quantity|Range|Reference", "The value of the trait that holds (or does not hold - see 'exclude') for members of the group.", 0, 1, value));
+          children.add(new Property("value[x]", "CodeableConcept|boolean|Quantity|Range|Reference(Group|ValueSet)", "The value of the trait that holds (or does not hold - see 'exclude') for members of the group.", 0, 1, value));
           children.add(new Property("exclude", "boolean", "If true, indicates the characteristic is one that is NOT held by members of the group.", 0, 1, exclude));
           children.add(new Property("period", "Period", "The period over which the characteristic is tested; e.g. the patient had an operation during the month of June.", 0, 1, period));
         }
@@ -454,13 +454,13 @@ public class Group extends DomainResource {
         public Property getNamedProperty(int _hash, String _name, boolean _checkValid) throws FHIRException {
           switch (_hash) {
           case 3059181: /*code*/  return new Property("code", "CodeableConcept", "A code that identifies the kind of trait being asserted.", 0, 1, code);
-          case -1410166417: /*value[x]*/  return new Property("value[x]", "CodeableConcept|boolean|Quantity|Range|Reference", "The value of the trait that holds (or does not hold - see 'exclude') for members of the group.", 0, 1, value);
-          case 111972721: /*value*/  return new Property("value[x]", "CodeableConcept|boolean|Quantity|Range|Reference", "The value of the trait that holds (or does not hold - see 'exclude') for members of the group.", 0, 1, value);
-          case 924902896: /*valueCodeableConcept*/  return new Property("value[x]", "CodeableConcept|boolean|Quantity|Range|Reference", "The value of the trait that holds (or does not hold - see 'exclude') for members of the group.", 0, 1, value);
-          case 733421943: /*valueBoolean*/  return new Property("value[x]", "CodeableConcept|boolean|Quantity|Range|Reference", "The value of the trait that holds (or does not hold - see 'exclude') for members of the group.", 0, 1, value);
-          case -2029823716: /*valueQuantity*/  return new Property("value[x]", "CodeableConcept|boolean|Quantity|Range|Reference", "The value of the trait that holds (or does not hold - see 'exclude') for members of the group.", 0, 1, value);
-          case 2030761548: /*valueRange*/  return new Property("value[x]", "CodeableConcept|boolean|Quantity|Range|Reference", "The value of the trait that holds (or does not hold - see 'exclude') for members of the group.", 0, 1, value);
-          case 1755241690: /*valueReference*/  return new Property("value[x]", "CodeableConcept|boolean|Quantity|Range|Reference", "The value of the trait that holds (or does not hold - see 'exclude') for members of the group.", 0, 1, value);
+          case -1410166417: /*value[x]*/  return new Property("value[x]", "CodeableConcept|boolean|Quantity|Range|Reference(Group|ValueSet)", "The value of the trait that holds (or does not hold - see 'exclude') for members of the group.", 0, 1, value);
+          case 111972721: /*value*/  return new Property("value[x]", "CodeableConcept|boolean|Quantity|Range|Reference(Group|ValueSet)", "The value of the trait that holds (or does not hold - see 'exclude') for members of the group.", 0, 1, value);
+          case 924902896: /*valueCodeableConcept*/  return new Property("value[x]", "CodeableConcept|boolean|Quantity|Range|Reference(Group|ValueSet)", "The value of the trait that holds (or does not hold - see 'exclude') for members of the group.", 0, 1, value);
+          case 733421943: /*valueBoolean*/  return new Property("value[x]", "CodeableConcept|boolean|Quantity|Range|Reference(Group|ValueSet)", "The value of the trait that holds (or does not hold - see 'exclude') for members of the group.", 0, 1, value);
+          case -2029823716: /*valueQuantity*/  return new Property("value[x]", "CodeableConcept|boolean|Quantity|Range|Reference(Group|ValueSet)", "The value of the trait that holds (or does not hold - see 'exclude') for members of the group.", 0, 1, value);
+          case 2030761548: /*valueRange*/  return new Property("value[x]", "CodeableConcept|boolean|Quantity|Range|Reference(Group|ValueSet)", "The value of the trait that holds (or does not hold - see 'exclude') for members of the group.", 0, 1, value);
+          case 1755241690: /*valueReference*/  return new Property("value[x]", "CodeableConcept|boolean|Quantity|Range|Reference(Group|ValueSet)", "The value of the trait that holds (or does not hold - see 'exclude') for members of the group.", 0, 1, value);
           case -1321148966: /*exclude*/  return new Property("exclude", "boolean", "If true, indicates the characteristic is one that is NOT held by members of the group.", 0, 1, exclude);
           case -991726143: /*period*/  return new Property("period", "Period", "The period over which the characteristic is tested; e.g. the patient had an operation during the month of June.", 0, 1, period);
           default: return super.getNamedProperty(_hash, _name, _checkValid);
@@ -580,11 +580,15 @@ public class Group extends DomainResource {
       public GroupCharacteristicComponent copy() {
         GroupCharacteristicComponent dst = new GroupCharacteristicComponent();
         copyValues(dst);
+        return dst;
+      }
+
+      public void copyValues(GroupCharacteristicComponent dst) {
+        super.copyValues(dst);
         dst.code = code == null ? null : code.copy();
         dst.value = value == null ? null : value.copy();
         dst.exclude = exclude == null ? null : exclude.copy();
         dst.period = period == null ? null : period.copy();
-        return dst;
       }
 
       @Override
@@ -874,10 +878,14 @@ public class Group extends DomainResource {
       public GroupMemberComponent copy() {
         GroupMemberComponent dst = new GroupMemberComponent();
         copyValues(dst);
+        return dst;
+      }
+
+      public void copyValues(GroupMemberComponent dst) {
+        super.copyValues(dst);
         dst.entity = entity == null ? null : entity.copy();
         dst.period = period == null ? null : period.copy();
         dst.inactive = inactive == null ? null : inactive.copy();
-        return dst;
       }
 
       @Override
@@ -1657,6 +1665,11 @@ public class Group extends DomainResource {
       public Group copy() {
         Group dst = new Group();
         copyValues(dst);
+        return dst;
+      }
+
+      public void copyValues(Group dst) {
+        super.copyValues(dst);
         if (identifier != null) {
           dst.identifier = new ArrayList<Identifier>();
           for (Identifier i : identifier)
@@ -1679,7 +1692,6 @@ public class Group extends DomainResource {
           for (GroupMemberComponent i : member)
             dst.member.add(i.copy());
         };
-        return dst;
       }
 
       protected Group typedCopy() {

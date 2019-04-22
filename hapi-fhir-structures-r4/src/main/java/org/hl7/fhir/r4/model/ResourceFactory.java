@@ -128,6 +128,8 @@ public class ResourceFactory extends Factory {
             return new FamilyMemberHistory();
         if ("ChargeItem".equals(name))
             return new ChargeItem();
+        if ("Statistic".equals(name))
+            return new Statistic();
         if ("ResearchElementDefinition".equals(name))
             return new ResearchElementDefinition();
         if ("ObservationDefinition".equals(name))
@@ -626,6 +628,7 @@ public class ResourceFactory extends Factory {
         case 2579998: return new Slot();
         case -2068224216: return new Specimen();
         case 863741595: return new SpecimenDefinition();
+        case -77293264: return new Statistic();
         case 1133777670: return new StructureDefinition();
         case 1958247177: return new StructureMap();
         case 505523517: return new Subscription();

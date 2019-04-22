@@ -133,6 +133,7 @@ public enum ResourceType {
     Slot,
     Specimen,
     SpecimenDefinition,
+    Statistic,
     StructureDefinition,
     StructureMap,
     Subscription,
@@ -412,6 +413,8 @@ public enum ResourceType {
       return "specimen";
     case SpecimenDefinition:
       return "specimendefinition";
+    case Statistic:
+      return "statistic";
     case StructureDefinition:
       return "structuredefinition";
     case StructureMap:
@@ -712,6 +715,8 @@ public enum ResourceType {
       return Specimen;
     if ("SpecimenDefinition".equals(code))
       return SpecimenDefinition;
+    if ("Statistic".equals(code))
+      return Statistic;
     if ("StructureDefinition".equals(code))
       return StructureDefinition;
     if ("StructureMap".equals(code))
