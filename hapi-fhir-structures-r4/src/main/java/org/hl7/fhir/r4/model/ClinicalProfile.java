@@ -29,7 +29,7 @@ package org.hl7.fhir.r4.model;
   
 */
 
-// Generated on Tue, Apr 16, 2019 08:42-0500 for FHIR v4.1.0
+// Generated on Mon, Jul 29, 2019 11:29-0500 for FHIR v4.1.0
 
 import java.util.*;
 
@@ -3368,9 +3368,9 @@ public class ClinicalProfile extends DomainResource {
         /**
          * Deviation cutoff.
          */
-        @Child(name = "deviation", type = {DecimalType.class}, order=2, min=0, max=1, modifier=false, summary=false)
+        @Child(name = "abscorrelation", type = {DecimalType.class}, order=2, min=0, max=1, modifier=false, summary=false)
         @Description(shortDefinition="Deviation cutoff", formalDefinition="Deviation cutoff." )
-        protected DecimalType deviation;
+        protected DecimalType abscorrelation;
 
         /**
          * Correlation entry.
@@ -3379,7 +3379,7 @@ public class ClinicalProfile extends DomainResource {
         @Description(shortDefinition="Correlation entry", formalDefinition="Correlation entry." )
         protected List<ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryComponent> entry;
 
-        private static final long serialVersionUID = 1065428674L;
+        private static final long serialVersionUID = -274622341L;
 
     /**
      * Constructor
@@ -3434,50 +3434,50 @@ public class ClinicalProfile extends DomainResource {
         }
 
         /**
-         * @return {@link #deviation} (Deviation cutoff.). This is the underlying object with id, value and extensions. The accessor "getDeviation" gives direct access to the value
+         * @return {@link #abscorrelation} (Deviation cutoff.). This is the underlying object with id, value and extensions. The accessor "getAbscorrelation" gives direct access to the value
          */
-        public DecimalType getDeviationElement() { 
-          if (this.deviation == null)
+        public DecimalType getAbscorrelationElement() { 
+          if (this.abscorrelation == null)
             if (Configuration.errorOnAutoCreate())
-              throw new Error("Attempt to auto-create ClinicalProfileLabScalarDistributionCorrelatedMedicationsComponent.deviation");
+              throw new Error("Attempt to auto-create ClinicalProfileLabScalarDistributionCorrelatedMedicationsComponent.abscorrelation");
             else if (Configuration.doAutoCreate())
-              this.deviation = new DecimalType(); // bb
-          return this.deviation;
+              this.abscorrelation = new DecimalType(); // bb
+          return this.abscorrelation;
         }
 
-        public boolean hasDeviationElement() { 
-          return this.deviation != null && !this.deviation.isEmpty();
+        public boolean hasAbscorrelationElement() { 
+          return this.abscorrelation != null && !this.abscorrelation.isEmpty();
         }
 
-        public boolean hasDeviation() { 
-          return this.deviation != null && !this.deviation.isEmpty();
+        public boolean hasAbscorrelation() { 
+          return this.abscorrelation != null && !this.abscorrelation.isEmpty();
         }
 
         /**
-         * @param value {@link #deviation} (Deviation cutoff.). This is the underlying object with id, value and extensions. The accessor "getDeviation" gives direct access to the value
+         * @param value {@link #abscorrelation} (Deviation cutoff.). This is the underlying object with id, value and extensions. The accessor "getAbscorrelation" gives direct access to the value
          */
-        public ClinicalProfileLabScalarDistributionCorrelatedMedicationsComponent setDeviationElement(DecimalType value) { 
-          this.deviation = value;
+        public ClinicalProfileLabScalarDistributionCorrelatedMedicationsComponent setAbscorrelationElement(DecimalType value) { 
+          this.abscorrelation = value;
           return this;
         }
 
         /**
          * @return Deviation cutoff.
          */
-        public BigDecimal getDeviation() { 
-          return this.deviation == null ? null : this.deviation.getValue();
+        public BigDecimal getAbscorrelation() { 
+          return this.abscorrelation == null ? null : this.abscorrelation.getValue();
         }
 
         /**
          * @param value Deviation cutoff.
          */
-        public ClinicalProfileLabScalarDistributionCorrelatedMedicationsComponent setDeviation(BigDecimal value) { 
+        public ClinicalProfileLabScalarDistributionCorrelatedMedicationsComponent setAbscorrelation(BigDecimal value) { 
           if (value == null)
-            this.deviation = null;
+            this.abscorrelation = null;
           else {
-            if (this.deviation == null)
-              this.deviation = new DecimalType();
-            this.deviation.setValue(value);
+            if (this.abscorrelation == null)
+              this.abscorrelation = new DecimalType();
+            this.abscorrelation.setValue(value);
           }
           return this;
         }
@@ -3485,18 +3485,18 @@ public class ClinicalProfile extends DomainResource {
         /**
          * @param value Deviation cutoff.
          */
-        public ClinicalProfileLabScalarDistributionCorrelatedMedicationsComponent setDeviation(long value) { 
-              this.deviation = new DecimalType();
-            this.deviation.setValue(value);
+        public ClinicalProfileLabScalarDistributionCorrelatedMedicationsComponent setAbscorrelation(long value) { 
+              this.abscorrelation = new DecimalType();
+            this.abscorrelation.setValue(value);
           return this;
         }
 
         /**
          * @param value Deviation cutoff.
          */
-        public ClinicalProfileLabScalarDistributionCorrelatedMedicationsComponent setDeviation(double value) { 
-              this.deviation = new DecimalType();
-            this.deviation.setValue(value);
+        public ClinicalProfileLabScalarDistributionCorrelatedMedicationsComponent setAbscorrelation(double value) { 
+              this.abscorrelation = new DecimalType();
+            this.abscorrelation.setValue(value);
           return this;
         }
 
@@ -3556,7 +3556,7 @@ public class ClinicalProfile extends DomainResource {
         protected void listChildren(List<Property> children) {
           super.listChildren(children);
           children.add(new Property("topn", "integer", "Number of medications cutoff (e.g. top 10).", 0, 1, topn));
-          children.add(new Property("deviation", "decimal", "Deviation cutoff.", 0, 1, deviation));
+          children.add(new Property("abscorrelation", "decimal", "Deviation cutoff.", 0, 1, abscorrelation));
           children.add(new Property("entry", "", "Correlation entry.", 0, java.lang.Integer.MAX_VALUE, entry));
         }
 
@@ -3564,7 +3564,7 @@ public class ClinicalProfile extends DomainResource {
         public Property getNamedProperty(int _hash, String _name, boolean _checkValid) throws FHIRException {
           switch (_hash) {
           case 3566009: /*topn*/  return new Property("topn", "integer", "Number of medications cutoff (e.g. top 10).", 0, 1, topn);
-          case 23819393: /*deviation*/  return new Property("deviation", "decimal", "Deviation cutoff.", 0, 1, deviation);
+          case -1112161840: /*abscorrelation*/  return new Property("abscorrelation", "decimal", "Deviation cutoff.", 0, 1, abscorrelation);
           case 96667762: /*entry*/  return new Property("entry", "", "Correlation entry.", 0, java.lang.Integer.MAX_VALUE, entry);
           default: return super.getNamedProperty(_hash, _name, _checkValid);
           }
@@ -3575,7 +3575,7 @@ public class ClinicalProfile extends DomainResource {
       public Base[] getProperty(int hash, String name, boolean checkValid) throws FHIRException {
         switch (hash) {
         case 3566009: /*topn*/ return this.topn == null ? new Base[0] : new Base[] {this.topn}; // IntegerType
-        case 23819393: /*deviation*/ return this.deviation == null ? new Base[0] : new Base[] {this.deviation}; // DecimalType
+        case -1112161840: /*abscorrelation*/ return this.abscorrelation == null ? new Base[0] : new Base[] {this.abscorrelation}; // DecimalType
         case 96667762: /*entry*/ return this.entry == null ? new Base[0] : this.entry.toArray(new Base[this.entry.size()]); // ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryComponent
         default: return super.getProperty(hash, name, checkValid);
         }
@@ -3588,8 +3588,8 @@ public class ClinicalProfile extends DomainResource {
         case 3566009: // topn
           this.topn = castToInteger(value); // IntegerType
           return value;
-        case 23819393: // deviation
-          this.deviation = castToDecimal(value); // DecimalType
+        case -1112161840: // abscorrelation
+          this.abscorrelation = castToDecimal(value); // DecimalType
           return value;
         case 96667762: // entry
           this.getEntry().add((ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryComponent) value); // ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryComponent
@@ -3603,8 +3603,8 @@ public class ClinicalProfile extends DomainResource {
       public Base setProperty(String name, Base value) throws FHIRException {
         if (name.equals("topn")) {
           this.topn = castToInteger(value); // IntegerType
-        } else if (name.equals("deviation")) {
-          this.deviation = castToDecimal(value); // DecimalType
+        } else if (name.equals("abscorrelation")) {
+          this.abscorrelation = castToDecimal(value); // DecimalType
         } else if (name.equals("entry")) {
           this.getEntry().add((ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryComponent) value);
         } else
@@ -3616,7 +3616,7 @@ public class ClinicalProfile extends DomainResource {
       public Base makeProperty(int hash, String name) throws FHIRException {
         switch (hash) {
         case 3566009:  return getTopnElement();
-        case 23819393:  return getDeviationElement();
+        case -1112161840:  return getAbscorrelationElement();
         case 96667762:  return addEntry(); 
         default: return super.makeProperty(hash, name);
         }
@@ -3627,7 +3627,7 @@ public class ClinicalProfile extends DomainResource {
       public String[] getTypesForProperty(int hash, String name) throws FHIRException {
         switch (hash) {
         case 3566009: /*topn*/ return new String[] {"integer"};
-        case 23819393: /*deviation*/ return new String[] {"decimal"};
+        case -1112161840: /*abscorrelation*/ return new String[] {"decimal"};
         case 96667762: /*entry*/ return new String[] {};
         default: return super.getTypesForProperty(hash, name);
         }
@@ -3639,8 +3639,8 @@ public class ClinicalProfile extends DomainResource {
         if (name.equals("topn")) {
           throw new FHIRException("Cannot call addChild on a primitive type ClinicalProfile.topn");
         }
-        else if (name.equals("deviation")) {
-          throw new FHIRException("Cannot call addChild on a primitive type ClinicalProfile.deviation");
+        else if (name.equals("abscorrelation")) {
+          throw new FHIRException("Cannot call addChild on a primitive type ClinicalProfile.abscorrelation");
         }
         else if (name.equals("entry")) {
           return addEntry();
@@ -3658,7 +3658,7 @@ public class ClinicalProfile extends DomainResource {
       public void copyValues(ClinicalProfileLabScalarDistributionCorrelatedMedicationsComponent dst) {
         super.copyValues(dst);
         dst.topn = topn == null ? null : topn.copy();
-        dst.deviation = deviation == null ? null : deviation.copy();
+        dst.abscorrelation = abscorrelation == null ? null : abscorrelation.copy();
         if (entry != null) {
           dst.entry = new ArrayList<ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryComponent>();
           for (ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryComponent i : entry)
@@ -3673,7 +3673,7 @@ public class ClinicalProfile extends DomainResource {
         if (!(other_ instanceof ClinicalProfileLabScalarDistributionCorrelatedMedicationsComponent))
           return false;
         ClinicalProfileLabScalarDistributionCorrelatedMedicationsComponent o = (ClinicalProfileLabScalarDistributionCorrelatedMedicationsComponent) other_;
-        return compareDeep(topn, o.topn, true) && compareDeep(deviation, o.deviation, true) && compareDeep(entry, o.entry, true)
+        return compareDeep(topn, o.topn, true) && compareDeep(abscorrelation, o.abscorrelation, true) && compareDeep(entry, o.entry, true)
           ;
       }
 
@@ -3684,11 +3684,12 @@ public class ClinicalProfile extends DomainResource {
         if (!(other_ instanceof ClinicalProfileLabScalarDistributionCorrelatedMedicationsComponent))
           return false;
         ClinicalProfileLabScalarDistributionCorrelatedMedicationsComponent o = (ClinicalProfileLabScalarDistributionCorrelatedMedicationsComponent) other_;
-        return compareValues(topn, o.topn, true) && compareValues(deviation, o.deviation, true);
+        return compareValues(topn, o.topn, true) && compareValues(abscorrelation, o.abscorrelation, true);
       }
 
       public boolean isEmpty() {
-        return super.isEmpty() && ca.uhn.fhir.util.ElementUtil.isEmpty(topn, deviation, entry);
+        return super.isEmpty() && ca.uhn.fhir.util.ElementUtil.isEmpty(topn, abscorrelation, entry
+          );
       }
 
   public String fhirType() {
@@ -3701,29 +3702,20 @@ public class ClinicalProfile extends DomainResource {
     @Block()
     public static class ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryComponent extends BackboneElement implements IBaseBackboneElement {
         /**
-         * Indicates the type of medication dispense (for example, where the medication is expected to be consumed or administered (i.e. inpatient or outpatient)).
-         */
-        @Child(name = "category", type = {CodeableConcept.class}, order=1, min=0, max=1, modifier=false, summary=false)
-        @Description(shortDefinition="Indicates the type of medication dispense (for example, where the medication is expected to be consumed or administered (i.e. inpatient or outpatient))", formalDefinition="Indicates the type of medication dispense (for example, where the medication is expected to be consumed or administered (i.e. inpatient or outpatient))." )
-        @ca.uhn.fhir.model.api.annotation.Binding(valueSet="http://hl7.org/fhir/ValueSet/medicationdispense-category")
-        protected CodeableConcept category;
-
-        /**
          * Medication code(s).
          */
-        @Child(name = "lab", type = {CodeableConcept.class, Medication.class}, order=2, min=1, max=1, modifier=false, summary=true)
+        @Child(name = "meds", type = {}, order=1, min=1, max=Child.MAX_UNLIMITED, modifier=false, summary=true)
         @Description(shortDefinition="Medication code(s)", formalDefinition="Medication code(s)." )
-        @ca.uhn.fhir.model.api.annotation.Binding(valueSet="http://hl7.org/fhir/ValueSet/medication-codes")
-        protected Type lab;
+        protected List<ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryMedsComponent> meds;
 
         /**
          * Correlation coefficient.
          */
-        @Child(name = "coefficient", type = {DecimalType.class}, order=3, min=1, max=1, modifier=false, summary=true)
+        @Child(name = "coefficient", type = {DecimalType.class}, order=2, min=1, max=1, modifier=false, summary=true)
         @Description(shortDefinition="Correlation coefficient", formalDefinition="Correlation coefficient." )
         protected DecimalType coefficient;
 
-        private static final long serialVersionUID = -1466346880L;
+        private static final long serialVersionUID = -1598134583L;
 
     /**
      * Constructor
@@ -3735,85 +3727,62 @@ public class ClinicalProfile extends DomainResource {
     /**
      * Constructor
      */
-      public ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryComponent(Type lab, DecimalType coefficient) {
+      public ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryComponent(DecimalType coefficient) {
         super();
-        this.lab = lab;
         this.coefficient = coefficient;
       }
 
         /**
-         * @return {@link #category} (Indicates the type of medication dispense (for example, where the medication is expected to be consumed or administered (i.e. inpatient or outpatient)).)
+         * @return {@link #meds} (Medication code(s).)
          */
-        public CodeableConcept getCategory() { 
-          if (this.category == null)
-            if (Configuration.errorOnAutoCreate())
-              throw new Error("Attempt to auto-create ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryComponent.category");
-            else if (Configuration.doAutoCreate())
-              this.category = new CodeableConcept(); // cc
-          return this.category;
-        }
-
-        public boolean hasCategory() { 
-          return this.category != null && !this.category.isEmpty();
+        public List<ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryMedsComponent> getMeds() { 
+          if (this.meds == null)
+            this.meds = new ArrayList<ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryMedsComponent>();
+          return this.meds;
         }
 
         /**
-         * @param value {@link #category} (Indicates the type of medication dispense (for example, where the medication is expected to be consumed or administered (i.e. inpatient or outpatient)).)
+         * @return Returns a reference to <code>this</code> for easy method chaining
          */
-        public ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryComponent setCategory(CodeableConcept value) { 
-          this.category = value;
+        public ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryComponent setMeds(List<ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryMedsComponent> theMeds) { 
+          this.meds = theMeds;
+          return this;
+        }
+
+        public boolean hasMeds() { 
+          if (this.meds == null)
+            return false;
+          for (ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryMedsComponent item : this.meds)
+            if (!item.isEmpty())
+              return true;
+          return false;
+        }
+
+        public ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryMedsComponent addMeds() { //3
+          ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryMedsComponent t = new ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryMedsComponent();
+          if (this.meds == null)
+            this.meds = new ArrayList<ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryMedsComponent>();
+          this.meds.add(t);
+          return t;
+        }
+
+        public ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryComponent addMeds(ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryMedsComponent t) { //3
+          if (t == null)
+            return this;
+          if (this.meds == null)
+            this.meds = new ArrayList<ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryMedsComponent>();
+          this.meds.add(t);
           return this;
         }
 
         /**
-         * @return {@link #lab} (Medication code(s).)
+         * @return The first repetition of repeating field {@link #meds}, creating it if it does not already exist
          */
-        public Type getLab() { 
-          return this.lab;
-        }
-
-        /**
-         * @return {@link #lab} (Medication code(s).)
-         */
-        public CodeableConcept getLabCodeableConcept() throws FHIRException { 
-          if (this.lab == null)
-            this.lab = new CodeableConcept();
-          if (!(this.lab instanceof CodeableConcept))
-            throw new FHIRException("Type mismatch: the type CodeableConcept was expected, but "+this.lab.getClass().getName()+" was encountered");
-          return (CodeableConcept) this.lab;
-        }
-
-        public boolean hasLabCodeableConcept() { 
-          return this != null && this.lab instanceof CodeableConcept;
-        }
-
-        /**
-         * @return {@link #lab} (Medication code(s).)
-         */
-        public Reference getLabReference() throws FHIRException { 
-          if (this.lab == null)
-            this.lab = new Reference();
-          if (!(this.lab instanceof Reference))
-            throw new FHIRException("Type mismatch: the type Reference was expected, but "+this.lab.getClass().getName()+" was encountered");
-          return (Reference) this.lab;
-        }
-
-        public boolean hasLabReference() { 
-          return this != null && this.lab instanceof Reference;
-        }
-
-        public boolean hasLab() { 
-          return this.lab != null && !this.lab.isEmpty();
-        }
-
-        /**
-         * @param value {@link #lab} (Medication code(s).)
-         */
-        public ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryComponent setLab(Type value) { 
-          if (value != null && !(value instanceof CodeableConcept || value instanceof Reference))
-            throw new Error("Not the right type for ClinicalProfile.lab.scalarDistribution.correlatedMedications.entry.lab[x]: "+value.fhirType());
-          this.lab = value;
-          return this;
+        public ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryMedsComponent getMedsFirstRep() { 
+          if (getMeds().isEmpty()) {
+            addMeds();
+          }
+          return getMeds().get(0);
         }
 
         /**
@@ -3881,19 +3850,14 @@ public class ClinicalProfile extends DomainResource {
 
         protected void listChildren(List<Property> children) {
           super.listChildren(children);
-          children.add(new Property("category", "CodeableConcept", "Indicates the type of medication dispense (for example, where the medication is expected to be consumed or administered (i.e. inpatient or outpatient)).", 0, 1, category));
-          children.add(new Property("lab[x]", "CodeableConcept|Reference(Medication)", "Medication code(s).", 0, 1, lab));
+          children.add(new Property("meds", "", "Medication code(s).", 0, java.lang.Integer.MAX_VALUE, meds));
           children.add(new Property("coefficient", "decimal", "Correlation coefficient.", 0, 1, coefficient));
         }
 
         @Override
         public Property getNamedProperty(int _hash, String _name, boolean _checkValid) throws FHIRException {
           switch (_hash) {
-          case 50511102: /*category*/  return new Property("category", "CodeableConcept", "Indicates the type of medication dispense (for example, where the medication is expected to be consumed or administered (i.e. inpatient or outpatient)).", 0, 1, category);
-          case -1110426669: /*lab[x]*/  return new Property("lab[x]", "CodeableConcept|Reference(Medication)", "Medication code(s).", 0, 1, lab);
-          case 106893: /*lab*/  return new Property("lab[x]", "CodeableConcept|Reference(Medication)", "Medication code(s).", 0, 1, lab);
-          case -1828840876: /*labCodeableConcept*/  return new Property("lab[x]", "CodeableConcept|Reference(Medication)", "Medication code(s).", 0, 1, lab);
-          case 1845767230: /*labReference*/  return new Property("lab[x]", "CodeableConcept|Reference(Medication)", "Medication code(s).", 0, 1, lab);
+          case 3347495: /*meds*/  return new Property("meds", "", "Medication code(s).", 0, java.lang.Integer.MAX_VALUE, meds);
           case 797813045: /*coefficient*/  return new Property("coefficient", "decimal", "Correlation coefficient.", 0, 1, coefficient);
           default: return super.getNamedProperty(_hash, _name, _checkValid);
           }
@@ -3903,8 +3867,7 @@ public class ClinicalProfile extends DomainResource {
       @Override
       public Base[] getProperty(int hash, String name, boolean checkValid) throws FHIRException {
         switch (hash) {
-        case 50511102: /*category*/ return this.category == null ? new Base[0] : new Base[] {this.category}; // CodeableConcept
-        case 106893: /*lab*/ return this.lab == null ? new Base[0] : new Base[] {this.lab}; // Type
+        case 3347495: /*meds*/ return this.meds == null ? new Base[0] : this.meds.toArray(new Base[this.meds.size()]); // ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryMedsComponent
         case 797813045: /*coefficient*/ return this.coefficient == null ? new Base[0] : new Base[] {this.coefficient}; // DecimalType
         default: return super.getProperty(hash, name, checkValid);
         }
@@ -3914,11 +3877,8 @@ public class ClinicalProfile extends DomainResource {
       @Override
       public Base setProperty(int hash, String name, Base value) throws FHIRException {
         switch (hash) {
-        case 50511102: // category
-          this.category = castToCodeableConcept(value); // CodeableConcept
-          return value;
-        case 106893: // lab
-          this.lab = castToType(value); // Type
+        case 3347495: // meds
+          this.getMeds().add((ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryMedsComponent) value); // ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryMedsComponent
           return value;
         case 797813045: // coefficient
           this.coefficient = castToDecimal(value); // DecimalType
@@ -3930,10 +3890,8 @@ public class ClinicalProfile extends DomainResource {
 
       @Override
       public Base setProperty(String name, Base value) throws FHIRException {
-        if (name.equals("category")) {
-          this.category = castToCodeableConcept(value); // CodeableConcept
-        } else if (name.equals("lab[x]")) {
-          this.lab = castToType(value); // Type
+        if (name.equals("meds")) {
+          this.getMeds().add((ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryMedsComponent) value);
         } else if (name.equals("coefficient")) {
           this.coefficient = castToDecimal(value); // DecimalType
         } else
@@ -3944,9 +3902,7 @@ public class ClinicalProfile extends DomainResource {
       @Override
       public Base makeProperty(int hash, String name) throws FHIRException {
         switch (hash) {
-        case 50511102:  return getCategory(); 
-        case -1110426669:  return getLab(); 
-        case 106893:  return getLab(); 
+        case 3347495:  return addMeds(); 
         case 797813045:  return getCoefficientElement();
         default: return super.makeProperty(hash, name);
         }
@@ -3956,8 +3912,7 @@ public class ClinicalProfile extends DomainResource {
       @Override
       public String[] getTypesForProperty(int hash, String name) throws FHIRException {
         switch (hash) {
-        case 50511102: /*category*/ return new String[] {"CodeableConcept"};
-        case 106893: /*lab*/ return new String[] {"CodeableConcept", "Reference"};
+        case 3347495: /*meds*/ return new String[] {};
         case 797813045: /*coefficient*/ return new String[] {"decimal"};
         default: return super.getTypesForProperty(hash, name);
         }
@@ -3966,17 +3921,8 @@ public class ClinicalProfile extends DomainResource {
 
       @Override
       public Base addChild(String name) throws FHIRException {
-        if (name.equals("category")) {
-          this.category = new CodeableConcept();
-          return this.category;
-        }
-        else if (name.equals("labCodeableConcept")) {
-          this.lab = new CodeableConcept();
-          return this.lab;
-        }
-        else if (name.equals("labReference")) {
-          this.lab = new Reference();
-          return this.lab;
+        if (name.equals("meds")) {
+          return addMeds();
         }
         else if (name.equals("coefficient")) {
           throw new FHIRException("Cannot call addChild on a primitive type ClinicalProfile.coefficient");
@@ -3993,8 +3939,11 @@ public class ClinicalProfile extends DomainResource {
 
       public void copyValues(ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryComponent dst) {
         super.copyValues(dst);
-        dst.category = category == null ? null : category.copy();
-        dst.lab = lab == null ? null : lab.copy();
+        if (meds != null) {
+          dst.meds = new ArrayList<ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryMedsComponent>();
+          for (ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryMedsComponent i : meds)
+            dst.meds.add(i.copy());
+        };
         dst.coefficient = coefficient == null ? null : coefficient.copy();
       }
 
@@ -4005,8 +3954,7 @@ public class ClinicalProfile extends DomainResource {
         if (!(other_ instanceof ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryComponent))
           return false;
         ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryComponent o = (ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryComponent) other_;
-        return compareDeep(category, o.category, true) && compareDeep(lab, o.lab, true) && compareDeep(coefficient, o.coefficient, true)
-          ;
+        return compareDeep(meds, o.meds, true) && compareDeep(coefficient, o.coefficient, true);
       }
 
       @Override
@@ -4020,12 +3968,210 @@ public class ClinicalProfile extends DomainResource {
       }
 
       public boolean isEmpty() {
-        return super.isEmpty() && ca.uhn.fhir.util.ElementUtil.isEmpty(category, lab, coefficient
-          );
+        return super.isEmpty() && ca.uhn.fhir.util.ElementUtil.isEmpty(meds, coefficient);
       }
 
   public String fhirType() {
     return "ClinicalProfile.lab.scalarDistribution.correlatedMedications.entry";
+
+  }
+
+  }
+
+    @Block()
+    public static class ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryMedsComponent extends BackboneElement implements IBaseBackboneElement {
+        /**
+         * Indicates the type of medication dispense (for example, where the medication is expected to be consumed or administered (i.e. inpatient or outpatient)).
+         */
+        @Child(name = "medication", type = {CodeableConcept.class, Medication.class}, order=1, min=1, max=1, modifier=false, summary=true)
+        @Description(shortDefinition="Indicates the type of medication dispense (for example, where the medication is expected to be consumed or administered (i.e. inpatient or outpatient))", formalDefinition="Indicates the type of medication dispense (for example, where the medication is expected to be consumed or administered (i.e. inpatient or outpatient))." )
+        @ca.uhn.fhir.model.api.annotation.Binding(valueSet="http://hl7.org/fhir/ValueSet/medication-codes")
+        protected Type medication;
+
+        private static final long serialVersionUID = -893521579L;
+
+    /**
+     * Constructor
+     */
+      public ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryMedsComponent() {
+        super();
+      }
+
+    /**
+     * Constructor
+     */
+      public ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryMedsComponent(Type medication) {
+        super();
+        this.medication = medication;
+      }
+
+        /**
+         * @return {@link #medication} (Indicates the type of medication dispense (for example, where the medication is expected to be consumed or administered (i.e. inpatient or outpatient)).)
+         */
+        public Type getMedication() { 
+          return this.medication;
+        }
+
+        /**
+         * @return {@link #medication} (Indicates the type of medication dispense (for example, where the medication is expected to be consumed or administered (i.e. inpatient or outpatient)).)
+         */
+        public CodeableConcept getMedicationCodeableConcept() throws FHIRException { 
+          if (this.medication == null)
+            this.medication = new CodeableConcept();
+          if (!(this.medication instanceof CodeableConcept))
+            throw new FHIRException("Type mismatch: the type CodeableConcept was expected, but "+this.medication.getClass().getName()+" was encountered");
+          return (CodeableConcept) this.medication;
+        }
+
+        public boolean hasMedicationCodeableConcept() { 
+          return this != null && this.medication instanceof CodeableConcept;
+        }
+
+        /**
+         * @return {@link #medication} (Indicates the type of medication dispense (for example, where the medication is expected to be consumed or administered (i.e. inpatient or outpatient)).)
+         */
+        public Reference getMedicationReference() throws FHIRException { 
+          if (this.medication == null)
+            this.medication = new Reference();
+          if (!(this.medication instanceof Reference))
+            throw new FHIRException("Type mismatch: the type Reference was expected, but "+this.medication.getClass().getName()+" was encountered");
+          return (Reference) this.medication;
+        }
+
+        public boolean hasMedicationReference() { 
+          return this != null && this.medication instanceof Reference;
+        }
+
+        public boolean hasMedication() { 
+          return this.medication != null && !this.medication.isEmpty();
+        }
+
+        /**
+         * @param value {@link #medication} (Indicates the type of medication dispense (for example, where the medication is expected to be consumed or administered (i.e. inpatient or outpatient)).)
+         */
+        public ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryMedsComponent setMedication(Type value) { 
+          if (value != null && !(value instanceof CodeableConcept || value instanceof Reference))
+            throw new Error("Not the right type for ClinicalProfile.lab.scalarDistribution.correlatedMedications.entry.meds.medication[x]: "+value.fhirType());
+          this.medication = value;
+          return this;
+        }
+
+        protected void listChildren(List<Property> children) {
+          super.listChildren(children);
+          children.add(new Property("medication[x]", "CodeableConcept|Reference(Medication)", "Indicates the type of medication dispense (for example, where the medication is expected to be consumed or administered (i.e. inpatient or outpatient)).", 0, 1, medication));
+        }
+
+        @Override
+        public Property getNamedProperty(int _hash, String _name, boolean _checkValid) throws FHIRException {
+          switch (_hash) {
+          case 1458402129: /*medication[x]*/  return new Property("medication[x]", "CodeableConcept|Reference(Medication)", "Indicates the type of medication dispense (for example, where the medication is expected to be consumed or administered (i.e. inpatient or outpatient)).", 0, 1, medication);
+          case 1998965455: /*medication*/  return new Property("medication[x]", "CodeableConcept|Reference(Medication)", "Indicates the type of medication dispense (for example, where the medication is expected to be consumed or administered (i.e. inpatient or outpatient)).", 0, 1, medication);
+          case -209845038: /*medicationCodeableConcept*/  return new Property("medication[x]", "CodeableConcept|Reference(Medication)", "Indicates the type of medication dispense (for example, where the medication is expected to be consumed or administered (i.e. inpatient or outpatient)).", 0, 1, medication);
+          case 2104315196: /*medicationReference*/  return new Property("medication[x]", "CodeableConcept|Reference(Medication)", "Indicates the type of medication dispense (for example, where the medication is expected to be consumed or administered (i.e. inpatient or outpatient)).", 0, 1, medication);
+          default: return super.getNamedProperty(_hash, _name, _checkValid);
+          }
+
+        }
+
+      @Override
+      public Base[] getProperty(int hash, String name, boolean checkValid) throws FHIRException {
+        switch (hash) {
+        case 1998965455: /*medication*/ return this.medication == null ? new Base[0] : new Base[] {this.medication}; // Type
+        default: return super.getProperty(hash, name, checkValid);
+        }
+
+      }
+
+      @Override
+      public Base setProperty(int hash, String name, Base value) throws FHIRException {
+        switch (hash) {
+        case 1998965455: // medication
+          this.medication = castToType(value); // Type
+          return value;
+        default: return super.setProperty(hash, name, value);
+        }
+
+      }
+
+      @Override
+      public Base setProperty(String name, Base value) throws FHIRException {
+        if (name.equals("medication[x]")) {
+          this.medication = castToType(value); // Type
+        } else
+          return super.setProperty(name, value);
+        return value;
+      }
+
+      @Override
+      public Base makeProperty(int hash, String name) throws FHIRException {
+        switch (hash) {
+        case 1458402129:  return getMedication(); 
+        case 1998965455:  return getMedication(); 
+        default: return super.makeProperty(hash, name);
+        }
+
+      }
+
+      @Override
+      public String[] getTypesForProperty(int hash, String name) throws FHIRException {
+        switch (hash) {
+        case 1998965455: /*medication*/ return new String[] {"CodeableConcept", "Reference"};
+        default: return super.getTypesForProperty(hash, name);
+        }
+
+      }
+
+      @Override
+      public Base addChild(String name) throws FHIRException {
+        if (name.equals("medicationCodeableConcept")) {
+          this.medication = new CodeableConcept();
+          return this.medication;
+        }
+        else if (name.equals("medicationReference")) {
+          this.medication = new Reference();
+          return this.medication;
+        }
+        else
+          return super.addChild(name);
+      }
+
+      public ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryMedsComponent copy() {
+        ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryMedsComponent dst = new ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryMedsComponent();
+        copyValues(dst);
+        return dst;
+      }
+
+      public void copyValues(ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryMedsComponent dst) {
+        super.copyValues(dst);
+        dst.medication = medication == null ? null : medication.copy();
+      }
+
+      @Override
+      public boolean equalsDeep(Base other_) {
+        if (!super.equalsDeep(other_))
+          return false;
+        if (!(other_ instanceof ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryMedsComponent))
+          return false;
+        ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryMedsComponent o = (ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryMedsComponent) other_;
+        return compareDeep(medication, o.medication, true);
+      }
+
+      @Override
+      public boolean equalsShallow(Base other_) {
+        if (!super.equalsShallow(other_))
+          return false;
+        if (!(other_ instanceof ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryMedsComponent))
+          return false;
+        ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryMedsComponent o = (ClinicalProfileLabScalarDistributionCorrelatedMedicationsEntryMedsComponent) other_;
+        return true;
+      }
+
+      public boolean isEmpty() {
+        return super.isEmpty() && ca.uhn.fhir.util.ElementUtil.isEmpty(medication);
+      }
+
+  public String fhirType() {
+    return "ClinicalProfile.lab.scalarDistribution.correlatedMedications.entry.meds";
 
   }
 
@@ -8517,21 +8663,11 @@ public class ClinicalProfile extends DomainResource {
     protected Reference population;
 
     /**
-     * The actual object that is the target of the reference (The base population against which this profile was generated.)
-     */
-    protected Group populationTarget;
-
-    /**
      * The cohort within the population that this profile represents.
      */
     @Child(name = "cohort", type = {Group.class}, order=3, min=1, max=1, modifier=false, summary=true)
     @Description(shortDefinition="The cohort within the population that this profile represents", formalDefinition="The cohort within the population that this profile represents." )
     protected Reference cohort;
-
-    /**
-     * The actual object that is the target of the reference (The cohort within the population that this profile represents.)
-     */
-    protected Group cohortTarget;
 
     /**
      * When the profile was generated.
@@ -8553,11 +8689,6 @@ public class ClinicalProfile extends DomainResource {
     @Child(name = "reporter", type = {Organization.class, Practitioner.class, PractitionerRole.class, Location.class}, order=6, min=1, max=1, modifier=false, summary=true)
     @Description(shortDefinition="Who is reporting the data", formalDefinition="Who is reporting the data." )
     protected Reference reporter;
-
-    /**
-     * The actual object that is the target of the reference (Who is reporting the data.)
-     */
-    protected Resource reporterTarget;
 
     /**
      * Laboratory profile entry.
@@ -8594,7 +8725,7 @@ public class ClinicalProfile extends DomainResource {
     @Description(shortDefinition="HPO Profile Entry", formalDefinition="Phenotypic description." )
     protected List<ClinicalProfileHpoComponent> hpo;
 
-    private static final long serialVersionUID = 2068390069L;
+    private static final long serialVersionUID = 404777181L;
 
   /**
    * Constructor
@@ -8737,26 +8868,6 @@ public class ClinicalProfile extends DomainResource {
     }
 
     /**
-     * @return {@link #population} The actual object that is the target of the reference. The reference library doesn't populate this, but you can use it to hold the resource if you resolve it. (The base population against which this profile was generated.)
-     */
-    public Group getPopulationTarget() { 
-      if (this.populationTarget == null)
-        if (Configuration.errorOnAutoCreate())
-          throw new Error("Attempt to auto-create ClinicalProfile.population");
-        else if (Configuration.doAutoCreate())
-          this.populationTarget = new Group(); // aa
-      return this.populationTarget;
-    }
-
-    /**
-     * @param value {@link #population} The actual object that is the target of the reference. The reference library doesn't use these, but you can use it to hold the resource if you resolve it. (The base population against which this profile was generated.)
-     */
-    public ClinicalProfile setPopulationTarget(Group value) { 
-      this.populationTarget = value;
-      return this;
-    }
-
-    /**
      * @return {@link #cohort} (The cohort within the population that this profile represents.)
      */
     public Reference getCohort() { 
@@ -8777,26 +8888,6 @@ public class ClinicalProfile extends DomainResource {
      */
     public ClinicalProfile setCohort(Reference value) { 
       this.cohort = value;
-      return this;
-    }
-
-    /**
-     * @return {@link #cohort} The actual object that is the target of the reference. The reference library doesn't populate this, but you can use it to hold the resource if you resolve it. (The cohort within the population that this profile represents.)
-     */
-    public Group getCohortTarget() { 
-      if (this.cohortTarget == null)
-        if (Configuration.errorOnAutoCreate())
-          throw new Error("Attempt to auto-create ClinicalProfile.cohort");
-        else if (Configuration.doAutoCreate())
-          this.cohortTarget = new Group(); // aa
-      return this.cohortTarget;
-    }
-
-    /**
-     * @param value {@link #cohort} The actual object that is the target of the reference. The reference library doesn't use these, but you can use it to hold the resource if you resolve it. (The cohort within the population that this profile represents.)
-     */
-    public ClinicalProfile setCohortTarget(Group value) { 
-      this.cohortTarget = value;
       return this;
     }
 
@@ -8923,21 +9014,6 @@ public class ClinicalProfile extends DomainResource {
      */
     public ClinicalProfile setReporter(Reference value) { 
       this.reporter = value;
-      return this;
-    }
-
-    /**
-     * @return {@link #reporter} The actual object that is the target of the reference. The reference library doesn't populate this, but you can use it to hold the resource if you resolve it. (Who is reporting the data.)
-     */
-    public Resource getReporterTarget() { 
-      return this.reporterTarget;
-    }
-
-    /**
-     * @param value {@link #reporter} The actual object that is the target of the reference. The reference library doesn't use these, but you can use it to hold the resource if you resolve it. (Who is reporting the data.)
-     */
-    public ClinicalProfile setReporterTarget(Resource value) { 
-      this.reporterTarget = value;
       return this;
     }
 
@@ -9749,17 +9825,17 @@ public class ClinicalProfile extends DomainResource {
    * <p>
    * Description: <b>Procedure correlated medication category</b><br>
    * Type: <b>token</b><br>
-   * Path: <b>ClinicalProfile.procedure.correlatedMedications.entry.category</b><br>
+   * Path: <b></b><br>
    * </p>
    */
-  @SearchParamDefinition(name="procedurecorrelatedmedcategory", path="ClinicalProfile.procedure.correlatedMedications.entry.category", description="Procedure correlated medication category", type="token" )
+  @SearchParamDefinition(name="procedurecorrelatedmedcategory", path="", description="Procedure correlated medication category", type="token" )
   public static final String SP_PROCEDURECORRELATEDMEDCATEGORY = "procedurecorrelatedmedcategory";
  /**
    * <b>Fluent Client</b> search parameter constant for <b>procedurecorrelatedmedcategory</b>
    * <p>
    * Description: <b>Procedure correlated medication category</b><br>
    * Type: <b>token</b><br>
-   * Path: <b>ClinicalProfile.procedure.correlatedMedications.entry.category</b><br>
+   * Path: <b></b><br>
    * </p>
    */
   public static final ca.uhn.fhir.rest.gclient.TokenClientParam PROCEDURECORRELATEDMEDCATEGORY = new ca.uhn.fhir.rest.gclient.TokenClientParam(SP_PROCEDURECORRELATEDMEDCATEGORY);
@@ -9887,17 +9963,17 @@ public class ClinicalProfile extends DomainResource {
    * <p>
    * Description: <b>Medication correlated medication category</b><br>
    * Type: <b>token</b><br>
-   * Path: <b>ClinicalProfile.medication.correlatedMedications.entry.category</b><br>
+   * Path: <b></b><br>
    * </p>
    */
-  @SearchParamDefinition(name="medicationcorrelatedmedcategory", path="ClinicalProfile.medication.correlatedMedications.entry.category", description="Medication correlated medication category", type="token" )
+  @SearchParamDefinition(name="medicationcorrelatedmedcategory", path="", description="Medication correlated medication category", type="token" )
   public static final String SP_MEDICATIONCORRELATEDMEDCATEGORY = "medicationcorrelatedmedcategory";
  /**
    * <b>Fluent Client</b> search parameter constant for <b>medicationcorrelatedmedcategory</b>
    * <p>
    * Description: <b>Medication correlated medication category</b><br>
    * Type: <b>token</b><br>
-   * Path: <b>ClinicalProfile.medication.correlatedMedications.entry.category</b><br>
+   * Path: <b></b><br>
    * </p>
    */
   public static final ca.uhn.fhir.rest.gclient.TokenClientParam MEDICATIONCORRELATEDMEDCATEGORY = new ca.uhn.fhir.rest.gclient.TokenClientParam(SP_MEDICATIONCORRELATEDMEDCATEGORY);
@@ -9927,17 +10003,17 @@ public class ClinicalProfile extends DomainResource {
    * <p>
    * Description: <b>Diagnosis correlated medication category</b><br>
    * Type: <b>token</b><br>
-   * Path: <b>ClinicalProfile.diagnosis.correlatedMedications.entry.category</b><br>
+   * Path: <b></b><br>
    * </p>
    */
-  @SearchParamDefinition(name="diagnosiscorrelatedmedcategory", path="ClinicalProfile.diagnosis.correlatedMedications.entry.category", description="Diagnosis correlated medication category", type="token" )
+  @SearchParamDefinition(name="diagnosiscorrelatedmedcategory", path="", description="Diagnosis correlated medication category", type="token" )
   public static final String SP_DIAGNOSISCORRELATEDMEDCATEGORY = "diagnosiscorrelatedmedcategory";
  /**
    * <b>Fluent Client</b> search parameter constant for <b>diagnosiscorrelatedmedcategory</b>
    * <p>
    * Description: <b>Diagnosis correlated medication category</b><br>
    * Type: <b>token</b><br>
-   * Path: <b>ClinicalProfile.diagnosis.correlatedMedications.entry.category</b><br>
+   * Path: <b></b><br>
    * </p>
    */
   public static final ca.uhn.fhir.rest.gclient.TokenClientParam DIAGNOSISCORRELATEDMEDCATEGORY = new ca.uhn.fhir.rest.gclient.TokenClientParam(SP_DIAGNOSISCORRELATEDMEDCATEGORY);
@@ -9987,17 +10063,17 @@ public class ClinicalProfile extends DomainResource {
    * <p>
    * Description: <b>Phenotype  correlated medication category</b><br>
    * Type: <b>token</b><br>
-   * Path: <b>ClinicalProfile.hpo.correlatedMedications.entry.category</b><br>
+   * Path: <b></b><br>
    * </p>
    */
-  @SearchParamDefinition(name="phenotypecorrelatedmedcategory", path="ClinicalProfile.hpo.correlatedMedications.entry.category", description="Phenotype  correlated medication category", type="token" )
+  @SearchParamDefinition(name="phenotypecorrelatedmedcategory", path="", description="Phenotype  correlated medication category", type="token" )
   public static final String SP_PHENOTYPECORRELATEDMEDCATEGORY = "phenotypecorrelatedmedcategory";
  /**
    * <b>Fluent Client</b> search parameter constant for <b>phenotypecorrelatedmedcategory</b>
    * <p>
    * Description: <b>Phenotype  correlated medication category</b><br>
    * Type: <b>token</b><br>
-   * Path: <b>ClinicalProfile.hpo.correlatedMedications.entry.category</b><br>
+   * Path: <b></b><br>
    * </p>
    */
   public static final ca.uhn.fhir.rest.gclient.TokenClientParam PHENOTYPECORRELATEDMEDCATEGORY = new ca.uhn.fhir.rest.gclient.TokenClientParam(SP_PHENOTYPECORRELATEDMEDCATEGORY);
