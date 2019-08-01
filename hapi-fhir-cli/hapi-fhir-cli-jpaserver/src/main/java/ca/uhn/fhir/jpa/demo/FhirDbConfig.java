@@ -4,6 +4,7 @@ import java.util.Properties;
 
 import ca.uhn.fhir.jpa.search.LuceneSearchMappingFactory;
 import ca.uhn.fhir.jpa.util.DerbyTenSevenHapiFhirDialect;
+import org.hibernate.dialect.MySQL5InnoDBDialect;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,23 +25,25 @@ public class FhirDbConfig {
 	 */
 	@Bean(destroyMethod = "close")
 	public DataSource dataSource() {
-		String url = "jdbc:derby:directory:target/jpaserver_derby_files;create=true";
+		String url = "jdbc:mysql://mysql:3306/hapi_dstu3";
 		if (isNotBlank(ContextHolder.getDatabaseUrl())) {
 			url = ContextHolder.getDatabaseUrl();
 		}
 
 		BasicDataSource retVal = new BasicDataSource();
-		retVal.setDriver(new org.apache.derby.jdbc.EmbeddedDriver());
+		retVal.setDriver(new com.mysql.jdbc.Driver())
+// 		retVal.setDriver(new org.apache.derby.jdbc.EmbeddedDriver());
 		retVal.setUrl(url);
-		retVal.setUsername("");
-		retVal.setPassword("");
+		retVal.setUsername("root");
+		retVal.setPassword("sqlpass");
 		return retVal;
 	}
 
 	@Bean
 	public Properties jpaProperties() {
 		Properties extraProperties = new Properties();
-		extraProperties.put("hibernate.dialect", DerbyTenSevenHapiFhirDialect.class.getName());
+// 		extraProperties.put("hibernate.dialect", DerbyTenSevenHapiFhirDialect.class.getName());
+		extraProperties.put("hibernate.dialect", MySQL5InnoDBDialect.class.getName());
 		extraProperties.put("hibernate.format_sql", "true");
 		extraProperties.put("hibernate.show_sql", "false");
 		extraProperties.put("hibernate.hbm2ddl.auto", "update");
